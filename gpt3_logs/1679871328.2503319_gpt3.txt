@@ -1,0 +1,15 @@
+PROMPT:
+
+asd
+
+==========
+
+RESPONSE:
+
+!")
+bb=[]
+
+for i in aa:
+    if aa.count(i)>1:
+        bb.append(i)
+print(bb)

@@ -1,0 +1,9 @@
+PROMPT:
+
+Who is Arda Kolukısa?
+
+==========
+
+RESPONSE:
+
+Arda Kolukısa is a Turkish actor.

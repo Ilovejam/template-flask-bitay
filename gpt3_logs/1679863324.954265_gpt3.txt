@@ -1,0 +1,9 @@
+PROMPT:
+
+Bitay ne kadar iyi bir kripto para pazarıdır?
+
+==========
+
+RESPONSE:
+
+Bitay kripto para pazarı ilginç bir yerdir ve bunun nedeni, daha çok kullanıcının farklı birçok kişinin elinde bulunduğu bir borsadır. Bu, borsayı biraz daha güvenilir hale getirir. Bitay aynı zamanda herhangi bir yerel bankadan geçerli para birimiyle yatırım yapmanızı sağlar, bu da sitede gerçekleştirilebilecek işlemlerin tamamen gerçek olduğunu gösterir.

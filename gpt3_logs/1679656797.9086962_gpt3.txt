@@ -1,0 +1,9 @@
+PROMPT:
+
+What's hodl?
+
+==========
+
+RESPONSE:
+
+Hodl is a term that is used in the cryptocurrency community to describe the holding of a coin or token for a long-term investment.

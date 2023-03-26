@@ -1,0 +1,11 @@
+PROMPT:
+
+Bitay'da şifremi unuttum nasıl değiştirebilirim
+
+==========
+
+RESPONSE:
+
+?
+
+Araçlar kutusunda "Hesap" seçeneğine giderseniz, hemen altında "Şifremi Sıfırla" düğmesini göreceksiniz. Bu düğmeye tıklayarak şifrenizi sıfırlamanın birkaç aşamasına girebilirsiniz.

@@ -1,0 +1,9 @@
+PROMPT:
+
+where is Turkey?
+
+==========
+
+RESPONSE:
+
+Turkey is located in the Middle East.

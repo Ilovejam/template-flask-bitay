@@ -1,0 +1,9 @@
+PROMPT:
+
+What are the main facts about crypto world?
+
+==========
+
+RESPONSE:
+
+Cryptocurrencies are digital or virtual tokens that use cryptography to secure their transactions and to control the creation of new units. Cryptocurrencies are decentralized, meaning they are not subject to government or financial institution control. Bitcoin, the first and most well-known cryptocurrency, was created in 2009. Cryptocurrencies are often traded on decentralized exchanges and can also be used to purchase goods and services.

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <title>ChatBot</title>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f6f6f6;
+        margin: 0;
+      }
+      .chat-container {
+        max-width: 900px;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+      }
+      .chat-header {
+        padding: 15px;
+        background-color: #039F6A;
+        color: #fff;
+        border-radius: 5px 5px 0 0;
+        display: flex;
+        align-items: center;
+      }
+      .chat-header img {
+        margin-right: 10px;
+      }
+      .chat-header h2 {
+        margin: 0;
+        font-size: 1.5em;
+        font-weight: normal;
+      }
+      .chat-messages {
+        padding: 15px;
+        overflow-y: auto;
+        height: 300px;
+      }
+      .message {
+        margin: 10px 0;
+      }
+      .user-message {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .user-message .message-text {
+        background-color: #8cfff3;
+        color: #000;
+        border-radius: 5px 0 5px 5px;
+        padding: 10px;
+        max-width: 70%;
+        text-align: right;
+        box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+      }
+      .bot-message {
+        display: flex;
+        justify-content: flex-start;
+      }
+      .bot-message .message-text {
+        background-color: #ffffff;
+        color: #000;
+        border-radius: 0 5px 5px 5px;
+        padding: 10px;
+        max-width: 70%;
+        text-align: left;
+        box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+      }
+      .message img {
+        width: 25px;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+      .chat-input {
+        display: flex;
+        margin-top: 10px;
+      }
+      .chat-input input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        background-color: #f6f6f6;
+        box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+      }
+      .chat-input input[type="submit"] {
+        padding: 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        background-color: #ce13c8;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+      }
+      .chat-input input[type="submit"]:hover {
+        background-color: #c800b3;
+      }
+      #logo {
+        max-width: 25%;
+        height: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 15px;
+      }
+      .message-text {
+        word-wrap: break-word;
+        max-height: calc(1.2em * 2 * 14); /* Two lines with a line-height of 1.2em */
+        overflow: hidden;
+        line-height: 1.2em;
+      }
+
+      #submit-button {
+        background-color: #039F6A;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">
+        <img id="logo" src="https://static.bitay.com.tr/logo/logo-colored.png" alt="ChatBot" />
+      </div>
+      <div class="chat-messages" id="chat-messages">
+      </div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <input id = "submit-button" type="submit" value="Send">
+      </div>
+    </div>
+    <script>
+      function sendMessage() {
+        var userInput = document.getElementById("user-input");
+        var userMessage = userInput.value;
+        if (userMessage !== "") {
+          var chatMessages = document.getElementById("chat-messages");
+          var userDiv = document.createElement("div");
+          userDiv.classList.add("message", "user-message");
+          var messageText = document.createElement("p");
+          messageText.classList.add("message-text");
+          messageText.innerText = userMessage;
+          userDiv.appendChild(messageText);
+          chatMessages.appendChild(userDiv);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+          userInput.value = "";
+          $.get("/get", {msg: userMessage}).done(function(data) {
+            var botDiv = document.createElement("div");
+            botDiv.classList.add("message", "bot-message");
+            var messageText = document.createElement("p");
+            messageText.classList.add("message-text");
+            botDiv.appendChild(messageText);
+            chatMessages.appendChild(botDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            var i = 0;
+            var typingEffect = setInterval(function() {
+              if (i < data.length) {
+                var currentChar = data.charAt(i);
+                if(currentChar === ' '){
+                  messageText.innerText += '\u00A0';
+                } else {
+                  messageText.innerText += currentChar;
+                }
+                
+                i++;
+              } else {
+                clearInterval(typingEffect);
+              }
+            }, 30);
+          });
+        }
+      }
+    
+      var userInput = document.getElementById("user-input");
+      userInput.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          sendMessage();
+        }
+      });
+    </script>
+    
+    
+  </body>
+</html>
+

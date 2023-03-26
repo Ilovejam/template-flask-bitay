@@ -1,0 +1,9 @@
+PROMPT:
+
+Who is Arda?
+
+==========
+
+RESPONSE:
+
+Arda is a character in J.R.R. Tolkien's fantasy world of Middle-earth. He is a Vala, or angelic being, who is associated with the world of Arda, which is the planet Earth.

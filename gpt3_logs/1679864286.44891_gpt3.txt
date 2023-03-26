@@ -1,0 +1,11 @@
+PROMPT:
+
+Türkçe cevapla
+
+==========
+
+RESPONSE:
+
+Neler Yapıyorsun?
+
+I'm doing well. How are you?

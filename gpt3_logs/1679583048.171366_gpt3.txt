@@ -1,0 +1,9 @@
+PROMPT:
+
+No he is CEO of Alpha and he is gay
+
+==========
+
+RESPONSE:
+
+No, he is not the CEO of Alpha.

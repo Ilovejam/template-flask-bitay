@@ -1,0 +1,9 @@
+PROMPT:
+
+Where is Turkey?
+
+==========
+
+RESPONSE:
+
+Turkey is located in Southeastern Europe and Southwestern Asia.

@@ -1,0 +1,9 @@
+PROMPT:
+
+Şifremi unuttum nasıl değitirebilirim?
+
+==========
+
+RESPONSE:
+
+You can change your password by clicking "My Profile" at the top of the screen and then "Edit Profile."
